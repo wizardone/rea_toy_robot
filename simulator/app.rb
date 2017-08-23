@@ -8,11 +8,11 @@ Dir[File.join(File.dirname(__FILE__), 'commands', '*.rb')].sort.each { |file| re
 module Simulator
   class App
 
-    attr_reader :robot, :board, :commander, :started
+    attr_reader :robot, :board, :started
 
     def initialize
-      @robot = Robot.new
       @board = Board.new
+      @robot = Robot.new(board: board)
       @started = true
     end
 
