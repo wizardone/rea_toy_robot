@@ -1,3 +1,4 @@
+require 'byebug'
 # Class that acts as decision maker for the actual
 # command to be executed. Keeps the logic encapsulated and
 # separate from the main Command class
@@ -19,7 +20,7 @@ module Simulator
       when 'MOVE'
         Simulator::Commands::Move.execute(robot: robot)
       when 'PLACE'
-        Simulator::Commands::Place.execute(robot: robot, args: args)
+        Simulator::Commands::Place.execute(robot: robot, args: args.split(','))
       when 'LEFT'
         Simulator::Commands::Left.execute(robot: robot)
       when 'RIGHT'

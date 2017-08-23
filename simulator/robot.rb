@@ -2,7 +2,7 @@
 module Simulator
   class Robot
 
-    attr_reader :coordinates, :facing, :placed
+    attr_accessor :coordinates, :facing, :placed
 
     def initialize
       @coordinates = [0, 0]
@@ -11,7 +11,7 @@ module Simulator
     end
 
     def output
-      "#{coordinates.join(', ')}, #{facing}"
+      "#{coordinates.join(',')},#{facing}"
     end
   end
 end
