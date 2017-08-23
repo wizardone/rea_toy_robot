@@ -1,4 +1,3 @@
-require 'byebug'
 # Class that acts as decision maker for the actual
 # command to be executed. Keeps the logic encapsulated and
 # separated from the main Command class

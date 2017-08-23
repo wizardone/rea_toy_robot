@@ -8,6 +8,7 @@ module Simulator
    #  0, 0, 0, 0, 0]
 
     attr_reader :max, :min
+
     def initialize(max: 5, min: 0)
       @max = max
       @min = min

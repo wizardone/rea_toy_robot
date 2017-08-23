@@ -2,7 +2,7 @@ module Simulator
   module Commands
     class Right < Simulator::Command
       def execute
-        return false unless robot_placed?
+        return false unless valid?
 
         Place.execute(robot: robot, args: new_coordinates)
       end

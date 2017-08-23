@@ -2,7 +2,7 @@ module Simulator
   module Commands
     class Place < Simulator::Command
       def execute
-        return false unless arguments_valid? && board_position_valid?
+        return false unless valid?
 
         coordinates = args[0, 2]
         facing = args[2]
@@ -14,9 +14,10 @@ module Simulator
 
       private
 
-      def arguments_valid?
+      def valid?
         args.size == 3 &&
-        Simulator::Robot::VALID_DIRECTIONS.include?(args.last)
+        Simulator::Robot::VALID_DIRECTIONS.include?(args.last) &&
+        board_position_valid?
       end
 
       def board_position_valid?

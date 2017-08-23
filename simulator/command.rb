@@ -20,7 +20,7 @@ module Simulator
       raise NotImplementedError
     end
 
-    def robot_placed?
+    def valid?
       robot.placed
     end
   end
