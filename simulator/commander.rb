@@ -14,15 +14,16 @@ module Simulator
     end
 
     def call
-      case command
+      actual_command, args = command.split
+      case actual_command
       when 'MOVE'
         Simulator::Commands::Move.execute(robot: robot)
       when 'PLACE'
-        Simulator::Commands::Place.execute
+        Simulator::Commands::Place.execute(robot: robot, args: args)
       when 'LEFT'
-        Simulator::Commands::Left.execute
+        Simulator::Commands::Left.execute(robot: robot)
       when 'RIGHT'
-        Simulator::Commands::Right.execute
+        Simulator::Commands::Right.execute(robot: robot)
       when 'REPORT'
         Simulator::Commands::Report.execute(robot: robot)
       else

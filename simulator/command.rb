@@ -3,16 +3,17 @@
 module Simulator
   class Command
 
-    attr_reader :robot
+    attr_reader :robot, :args
 
     class << self
-      def execute(robot:)
-        new(robot: robot).execute
+      def execute(robot:, args: nil)
+        new(robot: robot, args: args).execute
       end
     end
 
-    def initialize(robot:)
+    def initialize(robot:, args:)
       @robot = robot
+      @args = args
     end
 
     def execute

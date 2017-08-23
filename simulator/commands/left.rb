@@ -1,9 +1,9 @@
 module Simulator
   module Commands
-    class Move < Simulator::Command
+    class Left < Simulator::Command
       def execute
         return false unless robot_placed?
-        puts 'MOVE COMMAND'
+        puts 'Left COMMAND'
       end
     end
   end
