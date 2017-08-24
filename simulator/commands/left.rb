@@ -7,6 +7,8 @@ module Simulator
         Place.execute(robot: robot, args: new_coordinates)
       end
 
+      private
+
       def new_coordinates
         x, y = robot.coordinates
         case robot.facing

@@ -7,16 +7,16 @@ module Simulator
    #  0, 0, 0, 0, 0,
    #  0, 0, 0, 0, 0]
 
-    attr_reader :max, :min
+    attr_reader :max_position, :min_position
 
-    def initialize(max: 5, min: 0)
-      @max = max
-      @min = min
+    def initialize(max_position: 5, min_position: 0)
+      @max_position = max_position
+      @min_position = min_position
     end
 
     def position_possible?(coordinates)
       x, y = coordinates
-      (x <= max && x >= min) && (y <= max && y >= min)
+      (x <= max_position && x >= min_position) && (y <= max_position && y >= min_position)
     end
   end
 end
